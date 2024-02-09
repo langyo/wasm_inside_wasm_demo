@@ -13,7 +13,10 @@ fn main() -> Result<()> {
         .build();
     let mut store = Store::new(&engine, wasi);
 
-    let module = Module::from_file(&engine, "target/wasm32-wasi/debug/outside.wasm")?;
+    let module = Module::from_file(
+        &engine,
+        "packages/outside/target/wasm32-wasi/debug/outside.wasm",
+    )?;
     linker.module(&mut store, "", &module)?;
     linker
         .get_default(&mut store, "")?

@@ -3,7 +3,5 @@ name = "outside"
 edition = "2021"
 
 [dependencies]
-anyhow = "^1"
-
-wasmi = { version = "0.31", default-features = false }
-wasmi_wasi = "*"
+wasmi = "0.31"
+wat = "1"
