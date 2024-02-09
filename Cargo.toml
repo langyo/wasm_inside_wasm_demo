@@ -1,0 +1,10 @@
+[package]
+name = "boot"
+edition = "2021"
+
+[dependencies]
+anyhow = "^1"
+
+wasmtime = "17"
+wasmtime-wasi = "17"
+wasi-cap-std-sync = "17"

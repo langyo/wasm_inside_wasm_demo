@@ -1,0 +1,16 @@
+[config]
+default_to_workspace = false
+skip_core_tasks = true
+
+[tasks.dev]
+script = '''
+#!@duckscript
+
+exec cargo build --target wasm32-wasi --manifest-path ./packages/inside/Cargo.toml
+exec cargo build --target wasm32-wasi --manifest-path ./packages/outside/Cargo.toml
+exec cargo run --package boot
+'''
+
+[tasks.watch]
+watch = { watch = ["./packages/"] }
+run_task = { name = ["dev"], fork = true }

@@ -1,0 +1,10 @@
+[package]
+name = "outside"
+edition = "2021"
+
+[dependencies]
+anyhow = "^1"
+
+wasmi = "0.31"
+wasmi_wasi = "0.31"
+wasi-cap-std-sync = "*"
