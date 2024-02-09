@@ -1,6 +1,5 @@
-use wasi_cap_std_sync::WasiCtxBuilder;
 use wasmi::{Config, Engine, Extern, Linker, Module, Store};
-use wasmi_wasi::{add_to_linker, WasiCtx};
+use wasmi_wasi::{add_to_linker, sync::WasiCtxBuilder, WasiCtx};
 
 fn main() {
     let wasm = include_bytes!("../../inside/target/wasm32-wasi/debug/inside.wasm");

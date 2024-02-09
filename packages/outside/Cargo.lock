@@ -344,7 +344,6 @@ name = "outside"
 version = "0.0.0"
 dependencies = [
  "anyhow",
- "wasi-cap-std-sync",
  "wasmi",
  "wasmi_wasi",
 ]
