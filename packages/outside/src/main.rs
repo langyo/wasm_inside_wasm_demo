@@ -1,16 +1,7 @@
 use wasmi::*;
 
 fn main() {
-    let engine = Engine::default();
-    let wat = r#"
-        (module
-            (import "host" "hello" (func $host_hello (param i32)))
-            (func (export "hello")
-                (call $host_hello (i32.const 3))
-            )
-        )
-    "#;
-    let wasm = wat::parse_str(&wat).unwrap();
+    let wasm = include_bytes!("../../inside/target/wasm32-wasi/debug/inside.wasm");
     let module = Module::new(&engine, &mut &wasm[..]).unwrap();
 
     type HostState = u32;

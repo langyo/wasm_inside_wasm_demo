@@ -7,7 +7,7 @@ script = '''
 #!@duckscript
 
 exec cargo build --target wasm32-wasi --manifest-path ./packages/inside/Cargo.toml
-exec cargo +nightly build --target wasm32-wasi --manifest-path ./packages/outside/Cargo.toml
+exec cargo build --target wasm32-wasi --manifest-path ./packages/outside/Cargo.toml
 exec cargo run --package boot
 '''
 
